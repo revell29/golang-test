@@ -24,3 +24,15 @@ func TestHellWolrdRequire(t *testing.T) {
 	result := HelloWorld("Dira")
 	require.Equal(t, "Hello Dira", result, "Result must be Hello Dira")
 }
+
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Dira")
+	}
+}
+
+func BenchmarkHelloWorldDira(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Apsyadira")
+	}
+}
